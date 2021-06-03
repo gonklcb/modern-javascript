@@ -138,4 +138,14 @@ user.sayHi(); // newstar
 
 ## 참고
 - [모던 자바스크립트](https://ko.javascript.info/object-methods)
-- [MDN : this](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/this)
+- [MDN : this](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/this)   
+
+　   
+　   
+　   
+　   
+　   
+---   
+|이전페이지|다음페이지|
+|:---|---:|
+|[`◀ 4.3 가비지 컬렉션`](../4.3_garbage-collection#43-가비지-컬렉션)|[`4.5 'new' 연산자와 생성자 함수 ▶`]()|
