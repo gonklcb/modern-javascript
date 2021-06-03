@@ -124,7 +124,7 @@ function copyObj(obj) {
 ```   
 ![image](https://user-images.githubusercontent.com/70567818/120604962-7efc6a80-c488-11eb-9bb6-732eeb15a527.png)   
 　   
-자바스크립트 라이브러리 **lodash**의 메서드인 **\_.cloneDeep(obj)** 를 사용할 수도 있다.   
+자바스크립트 라이브러리 **lodash**의 메서드인 [**\_.cloneDeep(obj)**](https://lodash.com/docs/4.17.15#cloneDeep)를 사용할 수도 있다.   
 
 　   
 　   
