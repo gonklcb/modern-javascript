@@ -144,4 +144,12 @@ for (const prop in obj) {
   console.log(`obj.${prop} = ${obj[prop]}`);
 }
 ```   
-![image](https://user-images.githubusercontent.com/70567818/120592298-929fd500-c478-11eb-9d5e-daa857b30d5a.png)
+![image](https://user-images.githubusercontent.com/70567818/120592298-929fd500-c478-11eb-9d5e-daa857b30d5a.png)   
+　   
+　   
+　   
+　   
+　   
+|이전페이지|다음페이지|
+|:---|---:|
+||[`▶ 4.2 참조에 의한 객체 복사 `](../4.2_object-copy#42-참조에-의한-객체-복사)|
