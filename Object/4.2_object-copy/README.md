@@ -1,5 +1,5 @@
 # 4.2 참조에 의한 객체 복사
-## ◾ 참조에 의한 객체 복사
+## 참조에 의한 객체 복사
 원시 타입(Primitive type;  string, number, bigint, boolean, undefined, symbol)은 값이 메모리 공간에 할당된다.   
 하지만 객체는 참조 타입(Reference Type)으로 값이 메모리에 직접 할당되지 않고 **메모리의 위치를 참조**하여 간접적으로 접근하게된다.   
 ```javascriptt
@@ -42,7 +42,7 @@ let b = {};
 a와b의 객체 내부 내용은 같지만, 참조하고 있는 객체가 서로 다르기 때문에 false가 나오게 된다.   
 ![image](https://user-images.githubusercontent.com/70567818/120597223-c3cfd380-c47f-11eb-8866-28f916c44057.png)   
 　   
-## ◾ 객체 복사, 병합과 Object.assign
+## 객체 복사, 병합과 Object.assign
 객체 복사는 기존 방식으로 하게되면 같은 객체를 참조하게 된다고 앞서 말했다.
 그렇기에 객체의 복사는 다른 방법이 필요하다.
 - `for…in` 사용
@@ -78,7 +78,7 @@ target도 수정되고 returnedTarget에도 저장되었다.
 target에 source를 덮어씌웠기 때문에 b는 4가 되었다.   
 ![image](https://user-images.githubusercontent.com/70567818/120600399-af8dd580-c483-11eb-9a73-59c935e44338.png)   
 　   
-## ◾ 중첩 객체 복사
+## 중첩 객체 복사
 중첩 객체란 아래와 같이 객체의 프로퍼티가 객체인 구조를 의미한다.   
 ```javascript
 let user = {
