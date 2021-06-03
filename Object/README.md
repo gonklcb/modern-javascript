@@ -3,24 +3,10 @@
 ## 4.1 객체
 - JavaScript는 객체(Object) 기반의 스크립트 프로그래밍 언어로 이루고 있는 거의 모든것이 객체이다.
 - 원시 타입(Primitives)을 제외한 나머지 값들(함수, 배열, 정규표현식 등)은 모두 객체이다.
-- 객체(Object)는 키(key)과 값(value)으로 구성된 프로퍼티(Property)들의 집합이다.
 
-### 객체 생성하기
-1. 객체 생성자 문법
-```javscript
-let person = new Object();
-```
-2. 객체 리터럴 문법
-```javscript
-var person = {};
-```
-
-### 리터럴과 프로퍼티
-### 대괄호 표기법
-### 단축 프로퍼티
-### 프로퍼티 이름의 제약사항
-### `in` 연산자로 프로퍼티 존재 여부 확인하기
-### `for…in` 반복문
+![image](https://user-images.githubusercontent.com/70567818/120576502-d46f5200-c45d-11eb-8bc1-e5c1e958299d.png)  
+객체(Object)는 키(key)과 값(value)으로 구성된 프로퍼티(Property)들의 집합이다.  
+```javascript
 var person = {
   name: ['Bob', 'Smith'],
   age: 32,
@@ -33,106 +19,135 @@ var person = {
     alert('Hi! I\'m ' + this.name[0] + '.');
   }
 };
-저장 후 리로드 한 다음에 아래의 내용을 브라우저 개발자 도구의 JavaScript 콘솔에  입력해보세요.
+```
+　   
+### ◾ 객체 생성하기
+1. 객체 생성자 문법
+```javascript
+let person = new Object();
+```
+2. 객체 리터럴 문법
+```javascript
+var person = {};
+```  
+　   
+### ◾ 리터럴과 프로퍼티
+**리터럴(literal)** 이란 소스 코드의 고정된 값이다.
+```javascript
+const a = 1;
+```
+여기에서 리터럴은 a에 저장된 1을 의미한다.   
+JavaScript는 리터럴 표기법을 이용해, 필요한 요소들을 열거하는 것 만으로 객체를 만들 수 있다.  
+　   
+객체의 프로퍼티는 `키(key): 값(value)`으로 이루어져있다.  
+- key
+  - key는 string으로 들어가고 `' '`, `" "`를 별도로 사용하지 않아도 되지만  
+  두 단어 이상을 사용하려면 `' '`, `" "`로 묶어주는 것이 필요하다.
+  - 변수에서 사용할 수 없는 예약어(`for, let, return`)들도 프로퍼티 key로 사용할 수 있다.
+  - `__proto__`는 key로 사용할 수 없다.
+- value
+  - value에는 모든 자료형이 들어갈 수 있다.  
 
-person.name
-person.name[0]
-person.age
-person.interests[1]
-person.bio()
-person.greeting()
-자, 이제 당신은 객체에 포함된 데이터와 함수를 갖게 되었으며, 이것들을 간단하고 멋진 문법을 통해 사용할 수 있게되었습니다!
-
-Note: 만약 여기까지 진행하는데 어려움이 있다면, 제가 만들어놓은 파일과 비교해보세요 — oojs-finished.html (그리고 실행되는 예제도 보세요). Live 버전에서는 텅빈 화면만 보이겠지만, 그게 정상입니다 — 다시, 개발자도구를 열고 객체 구조를 들여다보기 위해 위에 언급된 명령어를 입력해보세요.
-
-자, 이제 뭘 해볼까요? 객체는 각기 다른 이름(위의 예에서는 name 과 age)과 값(예제에서, ['Bob', 'Smith'] 과 32)을 갖는 복수개의 멤버로 구성됩니다. 한 쌍의 이름과 값은 ',' 로 구분되야 하고, 이름과 값은 ':' 으로 분리됩니다. 결국 문법은 아래와 같은 패턴이 됩니다.
-
-var objectName = {
-  member1Name: member1Value,
-  member2Name: member2Value,
-  member3Name: member3Value
-};
-객체를 구성하는 멤버의 값은 어떤 것이라도 될 수 있습니다. 우리가 만든 person 객체는 문자열, 숫자, 배열 두개와 두개의 함수를 가지고 있습니다. 처음 4개의 아이템은 데이터 아이템인데, 이걸 객체의 프로퍼티(속성) 라고 부릅니다. 끝에 두개의 아이템은 함수인데 이 함수를 통해 데이터를 가지고 뭔가 일을 할 수 있게 됩니다. 이걸 우리는 메소드 라고 부릅니다.
-
-이런 객체는 객체 리터럴(object literal) 이라고 부릅니다. 객체를 생성할 때 컨텐츠를 그대로 대입합니다. 객체 리터럴은 클래스로부터 생성하는 방식과는 다릅니다. 이 방식은 뒤에서 살펴보게 될겁니다.
-
-객체 리터럴을 사용해서 객체를 생성하는 것은 연속된 구조체나 연관된 데이터를 일정한 방법으로 변환하고자 할 때  많이 쓰이는 방법입니다. 예를 들면 서버에게 주소를 데이터베이스에 넣어달라고 요청하는 경우입니다. 각 아이템들을 하나 하나 개별 전송하는 것보다, 하나의 객체를 전송하는 것이 훨씬 효율적입니다. 또 각 아이템들을 이름으로 구분해서 사용하기 원할 때도 배열을 사용하는 것보다 훨씬 쉽습니다.
-
-점 표기법
-위에서, 우리는 객체의 프로퍼티와 메소드를 점 표기법을 통해 접근했습니다. 객체 이름(person)은 네임스페이스처럼 동작합니다. 객체내에 캡슐화되어있는것에 접근하려면 먼저 점을 입력해야합니다. 그 다음 점을 찍고 접근하고자 하는 항목을 적습니다. 간단한 프로퍼티의 이름일 수도 있을 것이고, 배열의 일부이거나 객체의 메소드를 호출할 수도 있습니다.
-
-person.age
-person.interests[1]
-person.bio()
-하위 namespaces
-다른 객체를 객체 멤버의 값으로 갖는 것도 가능합니다. 예를 들면, 다음과 같은 name 멤버를 
-
-name: ['Bob', 'Smith'],
-아래와 같이 바꿔봅시다.
-
-name : {
-  first: 'Bob',
-  last: 'Smith'
-},
-자, 이제 우리는 성공적으로 하위 namespace 를 만들었습니다. 복잡해보이지만, 사실 그렇지도 않습니다. 이 속성을 사용하려면 그저 끝에 다른 점을 하나 찍어주기만 하면 됩니다. JS 콘솔에서 아래와 같이 입력해보세요.
-
+```javascript
+let person = {
+  'frist name': 'mirae',
+  'last name': 'jang',
+  age: 18,
+  job: 'developer'
+}
+```  
+　  
+❗ **주의하기**  
+*const*로 선언되어도 Object 내부의 property는 수정할 수 있다.  
+![image](https://user-images.githubusercontent.com/70567818/120580201-bad10900-c463-11eb-981a-af708895745f.png)   
+　   
+### ◾ 표기법
+```javascript
+const person = {
+  name: {
+    first: 'mirae',
+    last: 'jang'
+  },
+  age: 20,
+  'hair color': 'brown',
+}
+```
+#### 1. 점 표기법
+```javascript
 person.name.first
 person.name.last
-중요: 객체의 속성이 바뀌었으니까, 기존 메소드 코드를 바꿔 줘야 합니다. 기존 코드를
-
-name[0]
-name[1]
-아래와 같이 바꿔줘야 합니다.
-
-name.first
-name.last
-그렇지 않으면 기존 메소드는 더 이상 동작하지 않을 것입니다.
-
-괄호 표기법
-객체의 프로퍼티에 접근하는 다른 방법으로 괄호 표기법을 사용하는 것이 있습니다. 다음과 같이 사용하는 대신
-
 person.age
-person.name.first
-이렇게 사용할 수 있습니다.
+```  
+![image](https://user-images.githubusercontent.com/70567818/120588741-a9dbc400-c472-11eb-973a-a4a41cf30d14.png)  
 
-person['age']
-person['name']['first']
-이런 방식은 배열 속에 있는 항목에 접근하는 방법과 매우 유사해 보이는데 실제로도 이는 기본적으로 동일한 것입니다. 한 항목을 선택하기 위해 인덱스 숫자를 이용하는 대신에 각 멤버의 값들과 연결된 이름을 이용합니다. 객체가 간혹 연관배열 (associative arrays)이라고 불리는 것이 당연합니다. 연관배열은 배열이 숫자를 값에 연결하는 것과 같은 방법으로 스트링을 값에 매핑합니다.
+*점 표기법으로는 `'hair color'`에 접근할 수 없다.*
+　   
+#### 2. 괄호 표기법
+```javascript
+person[name][first]
+person[name][last]
+person[age]
+person[hair color]
+```
+괄호 표기법을 사용할 때는 key를 감싸는 따옴표(`' '` or `" "`)가 필요하다.  
+![image](https://user-images.githubusercontent.com/70567818/120589060-3edebd00-c473-11eb-82b4-dca1030a9c14.png)  
 
-객체 멤버 설정하기
-지금까지는 객체 멤버를 단순히 가져오기만(또는 반환) 했습니다. 설정할 멤버를 간단히 명시하여(점이나 대괄호 표기법을 사용) 객체 멤버의 값을 설정(갱신)하는 것도 물론 가능합니다.
+괄호 표기법에서는 두 단어 이상으로 이루어진 key로도 접근이 가능하다.   
+![image](https://user-images.githubusercontent.com/70567818/120589155-60d83f80-c473-11eb-95c2-2e5fc8e9fced.png)   
+　   
+### ◾ 단축 프로퍼티
+프로퍼티의 key와 value가 같다면 축약해서 하나만 적는 것이 가능하다.
+```javascript
+function makeUser(name, age) {
+  return {
+    name: name,
+    age: age,
+  };
+}
+```
+🔽 *프로퍼티 값 단축 구문(property value shorthand)* 적용 
+```javascript
+function makeUser(name, age) {
+  return {
+    name,
+    age,
+  };
+}
+```   
+　   
+### ◾ `in` 연산자로 프로퍼티 존재 여부 확인하기
+값이 없으면 `undefined`가 나오는것으로도 property의 존재 여부를 확일 할 수 있다.
+```javascript
+let user = { name: "John", age: 30 };
+```   
+![image](https://user-images.githubusercontent.com/70567818/120590638-cdecd480-c475-11eb-8987-94058c8a6be5.png)   
+　   
+하지만 `undefined`로 구분하는 경우 value를 `undefined`로 할당한 것과 구분 할 수 없게 된다.
+그래서 확실한 방법은 `in`을 사용하여 확인하는 방법이다.
+　   
+**`in`** 을 사용하면 Obejct 내부에 찾고자 하는 property가 있는지 확인할 수 있다.
+```javascript
+'Key' in Object
+```  
+*key를 따옴표로 감싸지 않으면 원하는 값이 제대로 나오지 않을 수 있기때문에 주의해야 한다.*   
+property가 있다면 **true**, 없다면 **flase**값이 나오게 된다.  
+![image](https://user-images.githubusercontent.com/70567818/120590789-12787000-c476-11eb-96fc-65cd60bea300.png)   
+　   
+### ◾ `for…in` 반복문
+```javascript
+for (variable in object) { ... }
+```
+`for…in`은 key-value 쌍으로 구성된 데이터의 경우 특정 key가 있는지 확인할 때 사용할 수 있다.
 
-person.age = 45;
-person['name']['last'] = 'Cratchit';
-위의 코드를 입력한 다음, 객체 멤버값을 아래와 같이 다시 확인해봅시다.
+```javascript
+var obj = {a: 1, b: 2, c: 3};
 
-person.age
-person['name']['last']
-객체 멤버를 설정하는 것은 단순히 기존에 존재하는 프로퍼티나 메소드로 값을 설정하는 것 뿐 아니라, 완전히 새로운 멤버를 생성할 수도 있습니다. JS 콘솔에서 아래 내용을 입력해보세요.
-
-person['eyes'] = 'hazel';
-person.farewell = function() { alert("Bye everybody!"); }
-자, 이제 새로운 멤버를 테스트해보세요.
-
-person['eyes']
-person.farewell()
-대괄호 표현의 이점 중 하나는 멤버의 값을 동적으로 변경할 수 있을 뿐아니라, 멤버 이름까지도 동적으로 사용할 수 있다는 것입니다. 자, 만약 사용자가 두개의 텍스트 입력을 통해서 people 데이터에 커스텀 값을 넣고 싶어한다고 가정해봅시다. 그 값은 다음과 같이 얻어올 수 있을겁니다.
-
-var myDataName = nameInput.value;
-var myDataValue = nameValue.value;
-이제 person 객체에 다음과 같이 새 멤버의 이름과 값을 추가할 수 있습니다.
-
-person[myDataName] = myDataValue;
-자, 제대로 동작하는지 보려면 아래와 같이 person 객체에 대괄호를 붙여서 확인해보면 됩니다.
-
-var myDataName = 'height';
-var myDataValue = '1.75m';
-person[myDataName] = myDataValue;
-이제 저장하고 리로드후 아래코드를 입력해보세요.
-
-person.height
-점 표기법으로는 위의 예제처럼 멤버의 이름을 동적으로 사용할 수 없고, 상수 값만을 사용해야 합니다.
-
+for (const prop in obj) {
+  console.log(`obj.${prop} = ${obj[prop]}`);
+}
+```   
+![image](https://user-images.githubusercontent.com/70567818/120592298-929fd500-c478-11eb-9d5e-daa857b30d5a.png)   
+　   
 ## 4.3 가비지 컬렉션
 자바스크립트 엔진이 자동으로 수행하는 일로서, 도달 불가능한 상태의 객체를 찾아 메모리에서 삭제하는 메모리 관리 시스템
 
