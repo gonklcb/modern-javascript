@@ -5,7 +5,7 @@
 - 원시 타입(Primitives)을 제외한 나머지 값들(함수, 배열, 정규표현식 등)은 모두 객체이다.
 
 ![image](https://user-images.githubusercontent.com/70567818/120576502-d46f5200-c45d-11eb-8bc1-e5c1e958299d.png)  
-객체(Object)는 키(key)과 값(value)으로 구성된 프로퍼티(Property)들의 집합이다.  
+객체(Object)는 키(key)와 값(value)으로 구성된 프로퍼티(Property)들의 집합이다.  
 ```javascript
 var person = {
   name: ['Bob', 'Smith'],
