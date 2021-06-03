@@ -82,4 +82,14 @@ family = null
 
 ## 참고
 - [모던 자바스크립트](https://ko.javascript.info/garbage-collection)
-- [MDN : 자바스크립트의 메모리관리](https://developer.mozilla.org/ko/docs/Web/JavaScript/Memory_Management)
+- [MDN : 자바스크립트의 메모리관리](https://developer.mozilla.org/ko/docs/Web/JavaScript/Memory_Management)   
+
+　   
+　   
+　   
+　   
+　   
+---   
+|이전페이지|다음페이지|
+|:---|---:|
+|[`◀ 4.3 가비지 컬렉션`](../4.3_garbage-collection#43-가비지-컬렉션)|[`4.4 메서드와 this ▶`](../4.4_object-methods#44-메서드와-this)|
