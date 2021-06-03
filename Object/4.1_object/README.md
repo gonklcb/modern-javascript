@@ -19,7 +19,7 @@ var person = {
 };
 ```
 　   
-## ◾ 객체 생성하기
+## 객체 생성하기
 1. 객체 생성자 문법
 ```javascript
 let person = new Object();
@@ -29,7 +29,7 @@ let person = new Object();
 var person = {};
 ```  
 　   
-## ◾ 리터럴과 프로퍼티
+## 리터럴과 프로퍼티
 **리터럴(literal)** 이란 소스 코드의 고정된 값이다.
 ```javascript
 const a = 1;
@@ -59,7 +59,7 @@ let person = {
 *const*로 선언되어도 Object 내부의 property는 수정할 수 있다.  
 ![image](https://user-images.githubusercontent.com/70567818/120580201-bad10900-c463-11eb-981a-af708895745f.png)   
 　   
-## ◾ 표기법
+## 표기법
 ```javascript
 const person = {
   name: {
@@ -93,7 +93,7 @@ person[hair color]
 괄호 표기법에서는 두 단어 이상으로 이루어진 key로도 접근이 가능하다.   
 ![image](https://user-images.githubusercontent.com/70567818/120589155-60d83f80-c473-11eb-95c2-2e5fc8e9fced.png)   
 　   
-## ◾ 단축 프로퍼티
+## 단축 프로퍼티
 프로퍼티의 key와 value가 같다면 축약해서 하나만 적는 것이 가능하다.
 ```javascript
 function makeUser(name, age) {
@@ -113,7 +113,7 @@ function makeUser(name, age) {
 }
 ```   
 　   
-## ◾ `in` 연산자로 프로퍼티 존재 여부 확인하기
+## `in` 연산자로 프로퍼티 존재 여부 확인하기
 값이 없으면 `undefined`가 나오는것으로도 property의 존재 여부를 확일 할 수 있다.
 ```javascript
 let user = { name: "John", age: 30 };
@@ -131,7 +131,7 @@ let user = { name: "John", age: 30 };
 property가 있다면 **true**, 없다면 **flase**값이 나오게 된다.  
 ![image](https://user-images.githubusercontent.com/70567818/120590789-12787000-c476-11eb-96fc-65cd60bea300.png)   
 　   
-## ◾ `for…in` 반복문
+## `for…in` 반복문
 ```javascript
 for (variable in object) { ... }
 ```
