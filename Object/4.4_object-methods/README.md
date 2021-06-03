@@ -1,0 +1,141 @@
+# 4.4 메서드와 this
+## 메서드
+객체 프로퍼티에 저장된 함수
+```javascript
+user = {
+  name: "newstar",
+  sayHi: function() {
+    alert("Hello");
+  }
+};
+```
+
+## 메서드와 this
+함수를 어떤 객체의 메서드로 호출하면 this의 값은 그 객체를 참조합니다.
+```javascript
+let user = {
+  name: "John",
+  age: 30,
+
+  sayHi() {
+    // 'this'는 '현재 객체'를 나타냅니다.
+    alert(this.name);
+  }
+
+};
+
+user.sayHi(); // John
+```
+위 예시와 같이 메서드 내부에서 `this`를 사용하면 메서드를 실행한 객체에 접근할 수 있습니다.
+
+```javascript
+let user = {
+  name: "John",
+  age: 30,
+
+  sayHi() {
+    alert( user.name ); // Error: Cannot read property 'name' of null
+  }
+
+};
+
+let admin = user;
+user = null; // user를 null로 덮어씁니다.
+
+admin.sayHi(); // sayHi()가 엉뚱한 객체를 참고하면서 에러가 발생했습니다.
+```
+위 예시처럼 원본 객체의 이름을 그대로 사용할 수도 있지만, `this`는 호출 시점에 해당 객체가 결정되므로 원본 객체가 다른 값으로 덮어 씌워질 경우, 에러가 발생하게 됩니다.
+
+## 객체의 프로토타입 체인에서의 this
+객체의 프로토타입 체인 어딘가에 정의한 메서드도 마찬가지로 동작합니다.
+
+```javascript
+var o = {
+  f:function() { return this.a + this.b; }
+};
+var p = Object.create(o);
+p.a = 1;
+p.b = 4;
+
+console.log(p.f()); // 5
+```
+
+## Getter와 Setter에서의 this
+Getter와 Setter에서도 동일하게 동작합니다. 이 경우에도 `this`는 Getter 혹은 Setter를 포함하는 객체를 참조합니다.
+
+```javascript
+function sum() {
+  return this.a + this.b + this.c;
+}
+
+var o = {
+  a: 1,
+  b: 2,
+  c: 3,
+  get average() {
+    return (this.a + this.b + this.c) / 3;
+  }
+};
+
+Object.defineProperty(o, 'sum', {
+    get: sum, enumerable: true, configurable: true});
+
+console.log(o.average, o.sum); // 2, 6
+```
+
+## 자유로운 this
+자바스크립트의 `this`는 모든 함수에서 사용할 수 있으며, 그 값이 런타임, 즉 호출 시점에 결정됩니다. 동일한 함수라도 다른 객체에서 호출했다면 `this`가 참조하는 값이 달라집니다.
+
+```javascript
+let user = { name: "John" };
+let admin = { name: "Admin" };
+
+function sayHi() {
+  alert( this.name );
+}
+
+// 별개의 객체에서 동일한 함수를 사용함
+user.f = sayHi;
+admin.f = sayHi;
+
+// 'this'는 '점(.) 앞의' 객체를 참조하기 때문에
+// this 값이 달라짐
+user.f(); // John  (this == user)
+admin.f(); // Admin  (this == admin)
+
+admin['f'](); // Admin (점과 대괄호는 동일하게 동작함)
+```
+
+## 객체 없이 호출하기
+객체가 없어도 this가 포함된 함수를 실행할 수 있습니다.
+```javascript
+function sayHi() {
+  alert(this);
+}
+
+sayHi(); // undefined
+```
+위 예시의 경우 `this`는 use strict 모드일 때는 undefined, 아닐 때는 전역 객체(브라우저에서는 window)를 참조하게 됩니다.
+
+하지만 이런 식의 코드는 일반적인 코드가 아닙니다. 함수 본문에 this가 사용되었다면, 객체 컨텍스트 내에서 함수를 호출할 것이라고 예상하시면 됩니다.
+
+## this와 arrow function
+화살표 함수는 `this`를 가지지 않습니다. 화살표 함수에서 `this`는 자신을 감싼 정적 범위(lexical context)입니다.
+
+```javascript
+let user = {
+  firstName: "newstar",
+  sayHi() {
+    let arrow = () => alert(this.firstName);
+    arrow();
+  }
+};
+
+user.sayHi(); // newstar
+```
+위의 예시에서 `this`는 `user.sayHi()`의 `this`가 됩니다.
+별개의 this가 만들어지는 건 원하지 않고, 외부 컨텍스트에 있는 this를 이용하고 싶은 경우 화살표 함수가 유용합니다.
+
+## 참고
+- [모던 자바스크립트](https://ko.javascript.info/object-methods)
+- [MDN : this](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/this)
