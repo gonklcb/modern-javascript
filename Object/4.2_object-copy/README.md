@@ -1,4 +1,5 @@
-# 4.2 참조에 의한 객체 복사
+# 4.2 참조에 의한 객체 복사   
+　   
 ## 참조에 의한 객체 복사
 원시 타입(Primitive type;  string, number, bigint, boolean, undefined, symbol)은 값이 메모리 공간에 할당된다.   
 하지만 객체는 참조 타입(Reference Type)으로 값이 메모리에 직접 할당되지 않고 **메모리의 위치를 참조**하여 간접적으로 접근하게된다.   
