@@ -5,7 +5,9 @@
 5.4 [배열](./5.4_array.md) `saebyeol`   
 5.5 [배열과 메서드](./5.5_array-methods.md) `mihyun`   
 5.6 [iterable 객체](./5.6_iterable.md) `mihyun`   
-5.7 [맵과 셋](./5.7_map-set.md) `heeyoung`   
+5.7 맵과 셋   
+　5.7.1 [Map](./5.7.1_map.md) `heeyoung`   
+　5.7.2 [Set](./5.7.2_map.md) `heeyoung`   
 5.8 [위크맵과 위크셋](./5.8_weakmap-weakset.md) `heeyoung`   
 5.9 [Object.keys, values, entries](./5.9_keys-values-entries.md) `mirae`   
 5.10 [구조 분해 할당](./5.10_destructuring-assignment.md) `mirae`   
