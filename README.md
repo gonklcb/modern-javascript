@@ -51,17 +51,17 @@
 8.4 [프로토타입 메서드와 __proto__가 없는 객체](./08_Prototypes_Inheritance/8.4_prototype-methods.md)   
 　   
 ## 9. 클래스
-9.1 [클래스와 기본 문법]()   
-9.2 [클래스 상속]()   
-9.3 [정적 메서드와 정적 프로퍼티]()   
-9.4 [private, protected 프로퍼티와 메서드]()   
-9.5 [내장 클래스 확장하기]()   
-9.6 ['instanceof'로 클래스 확인하기]()   
-9.7 [믹스인]()   
+9.1 [클래스와 기본 문법](./09_Classes/9.1_class.md)   
+9.2 [클래스 상속](./09_Classes/9.2_class-inheritance.md)   
+9.3 [정적 메서드와 정적 프로퍼티](./09_Classes/9.3_static-properties-methods.md)   
+9.4 [private, protected 프로퍼티와 메서드](./09_Classes/9.4_private-protected-properties-methods.md)   
+9.5 [내장 클래스 확장하기](./09_Classes/9.5_extend-natives.md)   
+9.6 ['instanceof'로 클래스 확인하기](./09_Classes/9.6_instanceof.md)   
+9.7 [믹스인](./09_Classes/9.7_mixins.md)   
 　   
 ## 10. 에러 핸들링
-10.1 ['try..catch'와 에러 핸들링]()   
-10.2 [커스텀 에러와 에러 확장]()   
+10.1 ['try..catch'와 에러 핸들링](./10_ErrorHandling/10.1_try-catch.md)   
+10.2 [커스텀 에러와 에러 확장](./10_ErrorHandling/10.2_custom-errors.md)   
 　   
 ## 11. 프라미스와 async, await
 11.1 [콜백]()   
