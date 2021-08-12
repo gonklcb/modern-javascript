@@ -45,10 +45,10 @@
 7.2 [프로퍼티 getter와 setter](./7_ObjectPropertiesConfiguration/7.2_property-getters-and-setters.md)   
 　   
 ## 8. 프로토타입과 프로토타입 상속
-8.1 [프로토타입 상속]()   
-8.2 [함수의 prototype 프로퍼티]()   
-8.3 [네이티브 프로토타입]()   
-8.4 [프로토타입 메서드와 __proto__가 없는 객체]()   
+8.1 [프로토타입 상속](./8_Prototypes_Inheritance/8.1_prototype-inheritance.md)   
+8.2 [함수의 prototype 프로퍼티](./8_Prototypes_Inheritance/8.2_function-prototype.md)   
+8.3 [네이티브 프로토타입](./8_Prototypes_Inheritance/8.3_native-prototypes.md)   
+8.4 [프로토타입 메서드와 __proto__가 없는 객체](./8_Prototypes_Inheritance/8.4_prototype-methods.md)   
 　   
 ## 9. 클래스
 9.1 [클래스와 기본 문법]()   
